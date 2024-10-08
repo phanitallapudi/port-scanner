@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Use the Dockerfile in the current directory
+    ports:
+      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1 
